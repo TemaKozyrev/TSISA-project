@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import './styles.scss';
 import data from './text.json';
+import $ from "jquery";
 
 export default class Text extends Component {
   componentDidMount () {
-    console.log(data.text);
+    $('.text').on('scroll', () => { this.handleScroll(); });
+  }
+
+  handleScroll () {
+    console.log(
+      $('.text').scrollTop()
+    );
   }
   render () {
     return (
