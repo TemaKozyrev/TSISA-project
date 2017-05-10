@@ -5,7 +5,7 @@ export default class Lines extends Component {
   render () {
     return (
       <div className="lines">
-        lines
+        <div className="cursor" />
       </div>
     );
   }
