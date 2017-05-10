@@ -7,10 +7,6 @@ import { connect } from 'react-redux';
 import * as cursorActions from '../../actions/CursorActions';
 
 class Text extends Component {
-  // static propTypes = {
-  //   cursorActions: PropTypes.func.isRequired,
-  //   changeCursor: PropTypes.func.isRequired
-  // };
 
   componentDidMount () {
     $('.text').on('scroll', () => { this.handleScroll(); });
@@ -18,7 +14,6 @@ class Text extends Component {
 
   handleScroll () {
     this.props.cursorActions.changeCursor($('.text').scrollTop());
-    console.log(this.props.cursor.position);
   }
   render () {
     return (
