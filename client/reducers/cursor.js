@@ -3,7 +3,8 @@ import {
 } from '../constants/cursor';
 
 const initialState = {
-  position: 0
+  position: 0,
+  maxPosition: 138 //stub
 };
 
 export default function cursor (state = initialState, action) {

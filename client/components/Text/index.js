@@ -1,17 +1,24 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 import './styles.scss';
 import data from './text.json';
 import $ from "jquery";
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as cursorActions from '../../actions/CursorActions';
 
-export default class Text extends Component {
+class Text extends Component {
+  // static propTypes = {
+  //   cursorActions: PropTypes.func.isRequired,
+  //   changeCursor: PropTypes.func.isRequired
+  // };
+
   componentDidMount () {
     $('.text').on('scroll', () => { this.handleScroll(); });
   }
 
   handleScroll () {
-    console.log(
-      $('.text').scrollTop()
-    );
+    this.props.cursorActions.changeCursor($('.text').scrollTop());
+    console.log(this.props.cursor.position);
   }
   render () {
     return (
@@ -21,3 +28,17 @@ export default class Text extends Component {
     );
   }
 }
+
+function mapStateToProps (state) {
+  return {
+    cursor: state.cursor
+  };
+}
+
+function mapDispatchToProps (dispatch) {
+  return {
+    cursorActions: bindActionCreators(cursorActions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Text);

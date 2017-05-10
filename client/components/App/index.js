@@ -13,7 +13,7 @@ export default class App extends Component {
       <Provider store={store}>
         <div className="container">
           <Text />
-          <Lines />
+          <Lines store={store} />
         </div>
       </Provider>
     );

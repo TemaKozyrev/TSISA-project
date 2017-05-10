@@ -5,7 +5,7 @@ import {
 export function changeCursor (newPosition) {
   return function (dispatch) {
     dispatch({
-      POSITION_CHANGED,
+      type: POSITION_CHANGED,
       payload: { position: newPosition }
     });
   };
