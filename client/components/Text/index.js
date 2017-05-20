@@ -5,6 +5,7 @@ import $ from "jquery";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as cursorActions from '../../actions/CursorActions';
+import PropTypes from 'prop-types';
 
 class Text extends Component {
   constructor (props) {
@@ -27,14 +28,12 @@ class Text extends Component {
   }
 
   handleScroll () {
-    // this.props.cursorActions.changeCursor($('.text').scrollTop());
     this.setState({
       scrollPosition: $('.text').scrollTop()
     });
   }
 
   handleClick (position) {
-    // console.log(position + this.state.scrollPosition);
     this.props.cursorActions.changeCursor(position + this.state.scrollPosition);
   }
 
@@ -46,6 +45,10 @@ class Text extends Component {
     );
   }
 }
+
+Text.propTypes = {
+  cursorActions: PropTypes.function
+};
 
 function mapStateToProps (state) {
   return {

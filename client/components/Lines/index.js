@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import './styles.scss';
 import { connect } from 'react-redux';
-import _ from 'lodash';
+import PropTypes from 'prop-types';
 
 class Lines extends Component {
 
   getPercentHeight (paragraphs, index) {
-    // let maxHeight = _.reduce(paragraphs, (sum, paragraph) => { return sum + paragraph.height; }, 0);
     let maxHeight = this.props.cursor.maxPosition;
     let height = (paragraphs[index].height) / (maxHeight / 100) * 5;
-    console.log(height);
-    return height
+    return height;
   }
 
   render () {
@@ -30,6 +28,11 @@ class Lines extends Component {
     );
   }
 }
+
+Lines.propTypes = {
+  cursor: PropTypes.object,
+  maxPosition: PropTypes.integer
+};
 
 function mapStateToProps (state) {
   return {

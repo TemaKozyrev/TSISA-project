@@ -7,11 +7,6 @@ export default (initialState) => {
   let middlewares = [
     thunkMiddleware
   ];
-  // const store = createStore(
-  //   reducers,
-  //   initialState,
-  //   applyMiddleware(...middlewares),
-  // );
 
   const store = createStore(
     reducers,
