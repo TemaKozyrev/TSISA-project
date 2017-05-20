@@ -10,6 +10,14 @@ class Text extends Component {
 
   componentDidMount () {
     $('.text').on('scroll', () => { this.handleScroll(); });
+
+    $('.text').children('p').each((index, element) => {
+      this.addParagraph(index, element);
+    });
+  }
+
+  addParagraph (index, element) {
+    this.props.cursorActions.addParagraphHeight({ index: index, height: $(element).height() });
   }
 
   handleScroll () {

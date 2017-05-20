@@ -1,1 +1,2 @@
 export const POSITION_CHANGED = 'POSITION_CHANGED';
+export const ADD_PARAGRAPH = 'ADD_PARAGRAPH';
