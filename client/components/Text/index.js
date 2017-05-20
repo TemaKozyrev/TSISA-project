@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import './styles.scss';
 import data from './text.json';
 import $ from "jquery";

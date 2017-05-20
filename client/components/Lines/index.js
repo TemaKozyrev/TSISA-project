@@ -1,11 +1,8 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import './styles.scss';
 import { connect } from 'react-redux';
 
 class Lines extends Component {
-  // static propTypes = {
-  //   position: PropTypes.number.isRequired
-  // }
 
   render () {
     const { cursor } = this.props;
