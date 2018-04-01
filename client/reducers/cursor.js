@@ -6,7 +6,7 @@ import _ from 'lodash';
 
 const initialState = {
   position: 0,
-  maxPosition: 5,
+  maxPosition: 0,
   paragraphs: []
 };
 

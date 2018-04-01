@@ -16,7 +16,7 @@ class Lines extends Component {
 
     return (
       <div className="lines">
-        <div className="cursor" style={{ top: ((cursor.position / ((cursor.maxPosition + 138) / 100)) * 5) }} />
+        <div className="cursor" style={{ top: ((cursor.position / ((cursor.maxPosition) / 100)) * 5) }} />
           {cursor.paragraphs.map((paragraph, i) => (<div key={i} className="block"
           style={{
             height: this.getPercentHeight(cursor.paragraphs, i),

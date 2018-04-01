@@ -24,7 +24,7 @@ class Text extends Component {
   }
 
   addParagraph (index, element) {
-    this.props.cursorActions.addParagraphHeight({ index: index, height: ($(element).height() - 16) });
+    this.props.cursorActions.addParagraphHeight({ index: index, height: ($(element).height() + 10) });
   }
 
   handleScroll () {
@@ -40,7 +40,7 @@ class Text extends Component {
   render () {
     return (
       <div className="text">
-        { data.text.map((paragraph, i) => (<p key={i}>{paragraph}</p>))}
+        { data.text.map((paragraph, i) => (<p key={i} style={{ marginTop: 10, marginBottom: 10 }}>{paragraph}</p>))}
       </div>
     );
   }
